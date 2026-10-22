@@ -8,6 +8,7 @@
     <title>Meu Blog Tech</title>
 
     <style>
+
         * {
             box-sizing: border-box;
         }
@@ -18,7 +19,10 @@
             background-color: #f2f2f2;
         }
 
-        /* CABEÇALHO */
+        /* =========================
+           CABEÇALHO
+        ========================= */t
+
         header {
             background-color: darkgrey;
             color: white;
@@ -33,7 +37,11 @@
             margin-top: 0;
         }
 
-        /* CONTEÚDO PRINCIPAL */
+
+        /* =========================
+           CONTEÚDO PRINCIPAL
+        ========================= */
+
         main {
             background-color: darkgrey;
             color: white;
@@ -42,7 +50,11 @@
             padding: 20px;
         }
 
-        /* POST */
+
+        /* =========================
+           ESTRUTURA DOS POSTS
+        ========================= */
+
         .post {
             display: flex;
             gap: 20px;
@@ -52,19 +64,30 @@
             border-bottom: 2px solid #555;
         }
 
-        /* IMAGEM */
+        .post:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+
+        /* =========================
+           CANVAS
+        ========================= */
+
         .tech-canvas-container {
             width: 50%;
             border: 3px solid #00e5ff;
             border-radius: 8px;
             overflow: hidden;
+
             box-shadow:
                 0 0 10px #00e5ff,
                 0 0 25px rgba(0, 229, 255, 0.5);
+
             background-color: #111;
         }
 
-        /* CANVAS */
         .tech-canvas-container canvas {
             display: block;
             width: 100%;
@@ -72,7 +95,11 @@
             pointer-events: none;
         }
 
-        /* BOTÕES */
+
+        /* =========================
+           BOTÕES
+        ========================= */
+
         .buttons-container {
             display: flex;
             justify-content: center;
@@ -103,7 +130,11 @@
             transform: scale(0.95);
         }
 
-        /* ARTIGO */
+
+        /* =========================
+           ARTIGOS
+        ========================= */
+
         article {
             width: 50%;
             text-align: left;
@@ -125,13 +156,11 @@
             margin-bottom: 12px;
         }
 
-        /* SEGUNDO POST */
-        .segundo-post {
-            width: 100%;
-            text-align: left;
-        }
 
-        /* RESPONSIVIDADE */
+        /* =========================
+           RESPONSIVIDADE
+        ========================= */
+
         @media (max-width: 650px) {
 
             .post {
@@ -142,13 +171,21 @@
             article {
                 width: 100%;
             }
+
         }
+
     </style>
+
 </head>
+
 
 <body>
 
-    <!-- CABEÇALHO -->
+
+    <!-- =========================
+         CABEÇALHO
+    ========================= -->
+
     <header>
 
         <h1>💻 Meu Blog Tech</h1>
@@ -160,13 +197,20 @@
     </header>
 
 
-    <!-- CONTEÚDO -->
+    <!-- =========================
+         CONTEÚDO
+    ========================= -->
+
     <main>
 
-        <!-- PRIMEIRO POST -->
+
+        <!-- ==================================================
+             PRIMEIRO POST
+        ================================================== -->
+
         <div class="post">
 
-            <!-- IMAGEM / CANVAS -->
+            <!-- IMAGEM -->
             <div class="tech-canvas-container">
 
                 <canvas id="techCanvas"></canvas>
@@ -179,7 +223,8 @@
                         type="button"
                         onclick="adicionarCoracao()"
                     >
-                        ❤️ <span id="likeCount">0</span>
+                        ❤️
+                        <span id="likeCount">0</span>
                     </button>
 
                     <button
@@ -187,34 +232,39 @@
                         type="button"
                         onclick="adicionarJoinha()"
                     >
-                        👍 <span id="likeCount2">0</span>
+                        👍
+                        <span id="likeCount2">0</span>
                     </button>
 
                 </div>
 
             </div>
 
-
-            <!-- ARTIGO -->
+            <!-- TEXTO -->
             <article>
 
-                <h2>Meu Primeiro Post</h2>
+                <h2>
+                    Meu Primeiro Post
+                </h2>
 
                 <p class="artigo-autor">
                     Por: Leonardo Maranini
                 </p>
 
                 <p>
-                    Seja bem-vindo ao Meu Blog Tech! Este espaço foi criado
-                    para compartilhar conhecimentos sobre programação,
-                    desenvolvimento web, inteligência artificial, hardware
-                    e as principais novidades do mundo da tecnologia.
+                    Seja bem-vindo ao Meu Blog Tech!
+                    Este espaço foi criado para compartilhar
+                    conhecimentos sobre programação,
+                    desenvolvimento web, inteligência artificial,
+                    hardware e as principais novidades do mundo
+                    da tecnologia.
                 </p>
 
                 <p>
-                    Aqui você encontrará dicas, tutoriais e curiosidades
-                    para quem deseja aprender mais sobre programação e
-                    acompanhar as tendências do universo da tecnologia.
+                    Aqui você encontrará dicas, tutoriais e
+                    curiosidades para quem deseja aprender mais
+                    sobre programação e acompanhar as tendências
+                    do universo da tecnologia.
                 </p>
 
             </article>
@@ -222,44 +272,150 @@
         </div>
 
 
-        <!-- SEGUNDO POST -->
-        <article class="segundo-post">
 
-            <h2>Meu Segundo Post</h2>
+        <!-- ==================================================
+             SEGUNDO POST
+        ================================================== -->
 
-            <p class="artigo-autor">
-                Por: Leonardo Maranini
-            </p>
+        <div class="post">
 
-            <p>
-               Seja bem-vindo ao Meu Blog Tech! Este espaço foi criado
-                    para compartilhar conhecimentos sobre programação,
-                    desenvolvimento web, inteligência artificial, hardware
-                    e as principais novidades do mundo da tecnologia.
-            </p>
+            <!-- IMAGEM -->
+            <div class="tech-canvas-container">
 
-            <p>
-                 Aqui você encontrará dicas, tutoriais e curiosidades
-                    para quem deseja aprender mais sobre programação e
-                    acompanhar as tendências do universo da tecnologia.
-            </p>
+                <canvas id="techCanvasSegundo"></canvas>
 
-        </article>
+                <!-- BOTÕES -->
+                <div class="buttons-container">
+
+                    <button
+                        class="like-button"
+                        type="button"
+                        onclick="adicionarCoracaoSegundo()"
+                    >
+                        ❤️
+                        <span id="likeCountSegundo">0</span>
+                    </button>
+
+                    <button
+                        class="like-button"
+                        type="button"
+                        onclick="adicionarJoinhaSegundo()"
+                    >
+                        👍
+                        <span id="likeCount2Segundo">0</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- TEXTO -->
+            <article>
+
+                <h2>
+                    O Avanço da Inteligência Artificial em 2026
+                </h2>
+
+                <p class="artigo-autor">
+                    Por: Leonardo Maranini
+                </p>
+
+                <p>
+                    A Inteligência Artificial continua evoluindo a passos largos, 
+                    transformando a maneira como desenvolvemos softwares e resolvemos 
+                    problemas complexos. Modelos modernos não apenas auxiliam na escrita 
+                    de código, mas também otimizam processos de automação e análise de dados em tempo real.
+                </p>
+
+                <p>
+                    Com ferramentas cada vez mais acessíveis, desenvolvedores podem focar 
+                    na arquitetura e na experiência do usuário, enquanto algoritmos inteligentes 
+                    cuidam das tarefas repetitivas. O futuro do desenvolvimento é colaborativo entre humanos e IA.
+                </p>
+
+            </article>
+
+        </div>
+
+
+
+        <!-- ==================================================
+             TERCEIRO POST
+        ================================================== -->
+
+        <div class="post">
+
+            <!-- IMAGEM DO TERCEIRO POST -->
+            <div class="tech-canvas-container">
+
+                <canvas id="techCanvasTerceiro"></canvas>
+
+                <!-- BOTÕES DO TERCEIRO POST -->
+                <div class="buttons-container">
+
+                    <button
+                        class="like-button"
+                        type="button"
+                        onclick="adicionarCoracaoTerceiro()"
+                    >
+                        ❤️
+                        <span id="likeCountTerceiro">0</span>
+                    </button>
+
+                    <button
+                        class="like-button"
+                        type="button"
+                        onclick="adicionarJoinhaTerceiro()"
+                    >
+                        👍
+                        <span id="likeCount2Terceiro">0</span>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- TEXTO DO TERCEIRO POST -->
+            <article>
+
+                <h2>
+                    Dominando o Desenvolvimento Web Moderno
+                </h2>
+
+                <p class="artigo-autor">
+                    Por: Leonardo Maranini
+                </p>
+
+                <p>
+                    A criação de interfaces dinâmicas e interativas com HTML, CSS e JavaScript 
+                    continua sendo a base essencial para qualquer programador web. Recursos como 
+                    a API do HTML5 Canvas e animações em CSS permitem criar experiências visuais incríveis direto no navegador.
+                </p>
+
+                <p>
+                    Aprender a estruturar bem o código e aplicar boas práticas de design responsivo 
+                    garante que seu site funcione perfeitamente em telas de todos os tamanhos. Acompanhe os próximos artigos para mais tutoriais práticos!
+                </p>
+
+            </article>
+
+        </div>
+
 
     </main>
 
 
+
     <script>
 
-        /* =========================
-           CONTADORES DOS BOTÕES
-        ========================= */
+
+        /* ==================================================
+           CONTADORES DO PRIMEIRO POST
+        ================================================== */
 
         let contadorCoracao = 0;
         let contadorJoinha = 0;
 
-
-        /* CORAÇÃO */
 
         function adicionarCoracao() {
 
@@ -271,8 +427,6 @@
         }
 
 
-        /* JOINHA */
-
         function adicionarJoinha() {
 
             contadorJoinha++;
@@ -283,266 +437,345 @@
         }
 
 
-        /* =========================
-           CANVAS
-        ========================= */
 
-        const canvas =
-            document.getElementById("techCanvas");
+        /* ==================================================
+           CONTADORES DO SEGUNDO POST
+        ================================================== */
 
-        const ctx =
-            canvas.getContext("2d");
+        let contadorCoracaoSegundo = 0;
+        let contadorJoinhaSegundo = 0;
 
 
-        /* =========================
-           IMAGEM
-        ========================= */
+        function adicionarCoracaoSegundo() {
 
-        const img = new Image();
+            contadorCoracaoSegundo++;
 
-        img.crossOrigin = "anonymous";
+            document.getElementById("likeCountSegundo").textContent =
+                contadorCoracaoSegundo;
 
-        img.src =
-            "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200";
+        }
 
 
-        /* =========================
-           PARTÍCULAS
-        ========================= */
+        function adicionarJoinhaSegundo() {
 
-        const particles = [];
+            contadorJoinhaSegundo++;
 
-        const numParticles = 35;
+            document.getElementById("likeCount2Segundo").textContent =
+                contadorJoinhaSegundo;
 
-
-        class Particle {
-
-            constructor(w, h) {
-
-                this.reset(w, h);
-
-            }
+        }
 
 
-            reset(w, h) {
 
-                this.x =
-                    Math.random() * w;
+        /* ==================================================
+           CONTADORES DO TERCEIRO POST
+        ================================================== */
 
-                this.y =
-                    Math.random() * h;
-
-                this.speed =
-                    1 + Math.random() * 2.5;
-
-                this.radius =
-                    1.5 + Math.random() * 2;
-
-                this.alpha =
-                    0.3 + Math.random() * 0.7;
-
-                this.angle =
-                    Math.random() < 0.5
-                        ? 0.3
-                        : -0.3;
-
-            }
+        let contadorCoracaoTerceiro = 0;
+        let contadorJoinhaTerceiro = 0;
 
 
-            update(w, h) {
+        function adicionarCoracaoTerceiro() {
 
-                this.x +=
-                    Math.cos(this.angle) *
-                    this.speed;
+            contadorCoracaoTerceiro++;
 
-                this.y +=
-                    Math.sin(this.angle) *
-                    this.speed;
+            document.getElementById("likeCountTerceiro").textContent =
+                contadorCoracaoTerceiro;
+
+        }
 
 
-                if (
-                    this.x > w ||
-                    this.x < 0 ||
-                    this.y > h ||
-                    this.y < 0
-                ) {
+        function adicionarJoinhaTerceiro() {
+
+            contadorJoinhaTerceiro++;
+
+            document.getElementById("likeCount2Terceiro").textContent =
+                contadorJoinhaTerceiro;
+
+        }
+
+
+
+        /* ==================================================
+           FUNÇÃO PARA CRIAR OS CANVAS ANIMADOS
+        ================================================== */
+
+        function criarCanvasAnimado(canvasId, imageUrl) {
+
+            const canvas =
+                document.getElementById(canvasId);
+
+            const ctx =
+                canvas.getContext("2d");
+
+
+            const img =
+                new Image();
+
+
+            img.crossOrigin =
+                "anonymous";
+
+
+            img.src =
+                imageUrl;
+
+
+            const particles = [];
+
+            const numParticles = 35;
+
+
+            class Particle {
+
+                constructor(w, h) {
 
                     this.reset(w, h);
 
                 }
 
-            }
 
+                reset(w, h) {
 
-            draw(ctx) {
+                    this.x =
+                        Math.random() * w;
 
-                ctx.beginPath();
+                    this.y =
+                        Math.random() * h;
 
-                ctx.arc(
-                    this.x,
-                    this.y,
-                    this.radius,
-                    0,
-                    Math.PI * 2
-                );
+                    this.speed =
+                        1 + Math.random() * 2.5;
 
-                ctx.fillStyle =
-                    `rgba(
-                        0,
-                        229,
-                        255,
-                        ${this.alpha}
-                    )`;
+                    this.radius =
+                        1.5 + Math.random() * 2;
 
-                ctx.shadowColor =
-                    "#00e5ff";
+                    this.alpha =
+                        0.3 + Math.random() * 0.7;
 
-                ctx.shadowBlur = 10;
-
-                ctx.fill();
-
-                ctx.shadowBlur = 0;
-
-            }
-
-        }
-
-
-        /* =========================
-           LINHA DE VARREDURA
-        ========================= */
-
-        let scanlineY = 0;
-
-
-        /* =========================
-           IMAGEM CARREGADA
-        ========================= */
-
-        img.onload = function () {
-
-            canvas.width =
-                img.width;
-
-            canvas.height =
-                img.height;
-
-
-            for (
-                let i = 0;
-                i < numParticles;
-                i++
-            ) {
-
-                particles.push(
-                    new Particle(
-                        canvas.width,
-                        canvas.height
-                    )
-                );
-
-            }
-
-
-            animate();
-
-        };
-
-
-        /* =========================
-           ANIMAÇÃO
-        ========================= */
-
-        function animate() {
-
-            ctx.drawImage(
-                img,
-                0,
-                0,
-                canvas.width,
-                canvas.height
-            );
-
-
-            /* SCANLINE */
-
-            scanlineY += 3;
-
-
-            if (
-                scanlineY >
-                canvas.height
-            ) {
-
-                scanlineY = 0;
-
-            }
-
-
-            const gradient =
-                ctx.createLinearGradient(
-                    0,
-                    scanlineY - 40,
-                    0,
-                    scanlineY + 40
-                );
-
-
-            gradient.addColorStop(
-                0,
-                "rgba(0, 229, 255, 0)"
-            );
-
-
-            gradient.addColorStop(
-                0.5,
-                "rgba(0, 229, 255, 0.25)"
-            );
-
-
-            gradient.addColorStop(
-                1,
-                "rgba(0, 229, 255, 0)"
-            );
-
-
-            ctx.fillStyle =
-                gradient;
-
-
-            ctx.fillRect(
-                0,
-                scanlineY - 40,
-                canvas.width,
-                80
-            );
-
-
-            /* PARTÍCULAS */
-
-            particles.forEach(
-                particle => {
-
-                    particle.update(
-                        canvas.width,
-                        canvas.height
-                    );
-
-                    particle.draw(ctx);
+                    this.angle =
+                        Math.random() < 0.5
+                            ? 0.3
+                            : -0.3;
 
                 }
-            );
 
 
-            requestAnimationFrame(
-                animate
-            );
+                update(w, h) {
+
+                    this.x +=
+                        Math.cos(this.angle) *
+                        this.speed;
+
+                    this.y +=
+                        Math.sin(this.angle) *
+                        this.speed;
+
+
+                    if (
+                        this.x > w ||
+                        this.x < 0 ||
+                        this.y > h ||
+                        this.y < 0
+                    ) {
+
+                        this.reset(w, h);
+
+                    }
+
+                }
+
+
+                draw(ctx) {
+
+                    ctx.beginPath();
+
+
+                    ctx.arc(
+                        this.x,
+                        this.y,
+                        this.radius,
+                        0,
+                        Math.PI * 2
+                    );
+
+
+                    ctx.fillStyle =
+                        `rgba(
+                            0,
+                            229,
+                            255,
+                            ${this.alpha}
+                        )`;
+
+
+                    ctx.shadowColor =
+                        "#00e5ff";
+
+
+                    ctx.shadowBlur =
+                        10;
+
+
+                    ctx.fill();
+
+
+                    ctx.shadowBlur =
+                        0;
+
+                }
+
+            }
+
+
+            let scanlineY = 0;
+
+
+            img.onload = function () {
+
+                canvas.width =
+                    img.width;
+
+                canvas.height =
+                    img.height;
+
+
+                for (
+                    let i = 0;
+                    i < numParticles;
+                    i++
+                ) {
+
+                    particles.push(
+                        new Particle(
+                            canvas.width,
+                            canvas.height
+                        )
+                    );
+
+                }
+
+
+                animate();
+
+            };
+
+
+            function animate() {
+
+                ctx.drawImage(
+                    img,
+                    0,
+                    0,
+                    canvas.width,
+                    canvas.height
+                );
+
+
+                /* LINHA DE VARREDURA */
+
+                scanlineY += 3;
+
+
+                if (
+                    scanlineY >
+                    canvas.height
+                ) {
+
+                    scanlineY = 0;
+
+                }
+
+
+                const gradient =
+                    ctx.createLinearGradient(
+                        0,
+                        scanlineY - 40,
+                        0,
+                        scanlineY + 40
+                    );
+
+
+                gradient.addColorStop(
+                    0,
+                    "rgba(0, 229, 255, 0)"
+                );
+
+
+                gradient.addColorStop(
+                    0.5,
+                    "rgba(0, 229, 255, 0.25)"
+                );
+
+
+                gradient.addColorStop(
+                    1,
+                    "rgba(0, 229, 255, 0)"
+                );
+
+
+                ctx.fillStyle =
+                    gradient;
+
+
+                ctx.fillRect(
+                    0,
+                    scanlineY - 40,
+                    canvas.width,
+                    80
+                );
+
+
+                /* PARTÍCULAS */
+
+                particles.forEach(
+                    particle => {
+
+                        particle.update(
+                            canvas.width,
+                            canvas.height
+                        );
+
+                        particle.draw(ctx);
+
+                    }
+                );
+
+
+                requestAnimationFrame(
+                    animate
+                );
+
+            }
 
         }
+
+
+
+        /* ==================================================
+           ATIVAR OS 3 CANVAS COM IMAGENS TEMÁTICAS
+        ================================================== */
+
+        // Post 1: Hardware / Placa Principal
+        criarCanvasAnimado(
+            "techCanvas",
+            "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800"
+        );
+
+        // Post 2: Inteligência Artificial (URL atualizada para permitir acesso CORS)
+        criarCanvasAnimado(
+            "techCanvasSegundo",
+            "https://picsum.photos/id/1060/800/500"
+        );
+
+        // Post 3: Desenvolvimento Web / Código
+        criarCanvasAnimado(
+            "techCanvasTerceiro",
+            "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800"
+        );
+
 
     </script>
 
 </body>
 
 </html>
-
